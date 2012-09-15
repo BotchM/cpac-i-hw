@@ -10,7 +10,7 @@
 public class Lyrics {
 
 	// Add new lyrics into an array like this:
-	public static final String[] TWISTANDSHOUT = new String[] {
+	static final String[] TWIST_AND_SHOUT = new String[] {
 		"The Beatles - \"Twist and Shout\"",
 		"",
 		"Well, shake it up, baby, now",
@@ -39,7 +39,7 @@ public class Lyrics {
 	}
 
 	public static void main(String args[]) {
-		printSongLyrics(TWISTANDSHOUT);
+		printSongLyrics(TWIST_AND_SHOUT);
 	}
 
 }
