@@ -23,18 +23,18 @@ class CarClass {
 	
 	//Does error-checking on user-entered value, returns new value if okay to move, old value if not.
 	public int moveX(int mvUnits) {
-		int newPos = x + mvUnits;
+		int newPos = this.x + mvUnits;
 		if (ignition == false) { // car is off
 			System.out.println("Your car is not running. You must turn the ignition on first!");
-			return x;
+			return this.x;
 		}
 		else {
 			if (newPos < CarClassAssignment.LIMIT_MIN_X || newPos > CarClassAssignment.LIMIT_MAX_Y) { // out of bounds
 				System.out.println("You cannot drive beyond the limits of the grid. Try again!");
-				return x;
+				return this.x;
 			}
 			else {
-				x = newPos;
+				this.x = newPos;
 				return newPos;				
 			}
 		}
@@ -43,31 +43,31 @@ class CarClass {
 	// Does error-checking on user-entered value, returns new value if okay to move, old value if not.
 	// TODO: Error-check if mvUnits is an int.
 	public int moveY(int mvUnits) {
-		int newPos = y + mvUnits;
+		int newPos = this.y + mvUnits;
 		if (ignition == false) {
 			System.out.println("Your car is not running. You must turn the ignition on first!");
-			return y;
+			return this.y;
 		}
 		else {
 			if (newPos < CarClassAssignment.LIMIT_MIN_Y || newPos > CarClassAssignment.LIMIT_MAX_Y) {
 				System.out.println("You cannot drive beyond the limits of the grid. Try again!");
-				return y;
+				return this.y;
 			}
 			else {
-				y = newPos;
+				this.y = newPos;
 				return newPos;
 			}
 		}
 	}
 	
 	//--------------------------------------------------- BEGIN - RANDOMIZE FUNCTIONS
-	public static int randomizePos(int min, int max) {
+	private static int randomizePos(int min, int max) {
 		Random randNum = new Random();
 		return randNum.nextInt(max - min + 1) + min;
 	}
 	
 	// Returns a char that symbolizes the car's color.
-	public static char randomizeColor() {
+	private static char randomizeColor() {
 		Random randNum = new Random();
 		int min = 0, max = 4;
 		int colorNum = randNum.nextInt(max - min + 1) + min;
@@ -99,24 +99,23 @@ class CarClass {
 	
 	//If ignition is false (off), return its opposite value. If true, returns false.
 	public void toggleIgnition() {
-		ignition = !ignition;
+		ignition = !this.ignition;
 	}
 	
 	public int getX() {
-		return x;
+		return this.x;
 	}
 	
 	public int getY() {
-		return y;
+		return this.y;
 	}
 	
 	public char getCarColor() {
-		return carColor;
+		return this.carColor;
 	}
 	
 	public boolean getIgnition() {
-		return ignition;
+		return this.ignition;
 	}
 	
 }
-
